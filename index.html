@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Best Backend Jobs | Premium Node.js, Python & Go Roles</title>
+  <meta name="description" content="Discover the best backend engineering jobs. We curate premium positions for Node.js, Python, Go, Java, and cloud engineers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="nav" id="navbar">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        BackendEngineer
+      </a>
+
+      <div class="nav__links">
+        <a href="#jobs">Jobs</a>
+        <a href="#study">Study</a>
+      </div>
+
+      <div class="nav__actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="login.html" class="btn btn--ghost btn--sm">Login</a>
+        <a href="register.html" class="btn btn--primary btn--sm">Get Access</a>
+      </div>
+
+      <button class="nav__burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileNav">
+      <a href="#jobs">Jobs</a>
+      <a href="#study">Study Materials</a>
+      <div class="mobile-actions">
+        <a href="login.html" class="btn btn--ghost">Login</a>
+        <a href="register.html" class="btn btn--primary">Get Access</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <header class="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="wrap hero__wrap">
+      <div class="hero__badge">
+        <span class="pulse-dot"></span>
+        1,240+ live backend jobs updated daily
+      </div>
+
+      <h1 class="hero__title">
+        Best Backend Jobs
+        <span class="hero__gradient">Premium Node.js, Python &amp; Go Roles</span>
+      </h1>
+
+      <p class="hero__sub">
+        We curate premium backend positions for engineers who build APIs, microservices, databases, cloud systems, and more.
+      </p>
+
+      <!-- Search bar -->
+      <form class="search" onsubmit="return false">
+        <div class="search__input-wrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input id="searchQ" type="text" placeholder="Job title, skill, company…" autocomplete="off" />
+        </div>
+        <button class="btn btn--primary" type="button" onclick="doSearch()">Search Jobs</button>
+      </form>
+
+      <!-- Filter chips -->
+      <div class="chips" id="chips">
+        <button class="chip active" data-f="all">All Roles</button>
+        <button class="chip" data-f="dotnet">.NET / C#</button>
+        <button class="chip" data-f="node">Node.js</button>
+        <button class="chip" data-f="python">Python</button>
+        <button class="chip" data-f="go">Go / Golang</button>
+        <button class="chip" data-f="java">Java</button>
+        <button class="chip" data-f="rust">Rust</button>
+        <button class="chip" data-f="devops">DevOps / Cloud</button>
+        <button class="chip" data-f="db">Database</button>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats">
+        <div class="stat">
+          <span class="stat__num" data-to="1240">0</span>
+          <span class="stat__lbl">Active Jobs</span>
+        </div>
+        <div class="stat__sep"></div>
+        <div class="stat">
+          <span class="stat__num" data-to="480">0</span>
+          <span class="stat__lbl">Companies Hiring</span>
+        </div>
+        <div class="stat__sep"></div>
+        <div class="stat">
+          <span class="stat__num" data-to="100">0</span><span class="stat__num stat__pct">%</span>
+          <span class="stat__lbl">Remote Only</span>
+        </div>
+        <div class="stat__sep"></div>
+        <div class="stat">
+          <span class="stat__num">$130k</span>
+          <span class="stat__lbl">Avg. Salary</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── TRUSTED BY ── -->
+  <div class="trust-bar">
+    <div class="wrap trust-bar__inner">
+      <span class="trust-bar__label">Hiring now</span>
+      <div class="trust-logos" id="trustLogos">
+        <img src="https://logo.clearbit.com/stripe.com" alt="Stripe" onerror="this.style.display='none'" />
+        <img src="https://logo.clearbit.com/shopify.com" alt="Shopify" onerror="this.style.display='none'" />
+        <img src="https://logo.clearbit.com/cloudflare.com" alt="Cloudflare" onerror="this.style.display='none'" />
+        <img src="https://logo.clearbit.com/notion.so" alt="Notion" onerror="this.style.display='none'" />
+        <img src="https://logo.clearbit.com/vercel.com" alt="Vercel" onerror="this.style.display='none'" />
+        <img src="https://logo.clearbit.com/openai.com" alt="OpenAI" onerror="this.style.display='none'" />
+        <img src="https://logo.clearbit.com/discord.com" alt="Discord" onerror="this.style.display='none'" />
+        <img src="https://logo.clearbit.com/figma.com" alt="Figma" onerror="this.style.display='none'" />
+        <img src="https://logo.clearbit.com/hashicorp.com" alt="HashiCorp" onerror="this.style.display='none'" />
+        <img src="https://logo.clearbit.com/anthropic.com" alt="Anthropic" onerror="this.style.display='none'" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ── JOB LISTINGS ── -->
+  <main class="jobs-section" id="jobs">
+    <div class="wrap">
+      <div class="jobs-header">
+        <div>
+          <h2 class="jobs-title">Remote Backend Jobs</h2>
+          <p class="jobs-meta" id="jobMeta">Showing <strong>12</strong> remote backend positions</p>
+        </div>
+        <div class="jobs-controls">
+          <select id="sortBy" onchange="renderJobs()">
+            <option value="new">Newest First</option>
+            <option value="salary">Highest Salary</option>
+            <option value="company">Company A–Z</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Free preview jobs -->
+      <div class="jobs-list" id="jobsList"></div>
+
+      <div class="jobs-load" id="loadMoreWrap" style="display:none">
+        <button class="btn btn--outline btn--lg" onclick="loadMore()">Load More Jobs</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── STUDY MATERIALS (100% FREE) ── -->
+  <section class="study" id="study">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="section-eye">Free Study Materials</p>
+        <h2 class="section-title">Master Backend Engineering</h2>
+        <p class="section-sub">Curated guides, interview prep, and system design resources — 100% free for engineers.</p>
+      </div>
+
+      <div class="study-grid">
+
+        <div class="study-card" onclick="openStudyGuide('roadmap')" style="cursor:pointer">
+          <div class="study-card__icon">📖</div>
+          <div class="study-card__badge free">Free</div>
+          <h3>Backend Roadmap 2026</h3>
+          <p>A complete visual roadmap for backend engineers — from HTTP basics to distributed systems. Know exactly what to learn and in what order.</p>
+          <div class="study-card__meta">
+            <span>⏱ 15 min read</span>
+            <span>📚 Beginner → Advanced</span>
+          </div>
+          <button class="btn btn--ghost btn--block" type="button" onclick="event.stopPropagation(); openStudyGuide('roadmap');">Read Guide →</button>
+        </div>
+
+        <div class="study-card" onclick="openStudyGuide('api')" style="cursor:pointer">
+          <div class="study-card__icon">🧩</div>
+          <div class="study-card__badge free">Free</div>
+          <h3>REST vs GraphQL vs gRPC</h3>
+          <p>When to use each API design pattern. Real-world trade-offs, use cases, and code examples for senior backend interviews.</p>
+          <div class="study-card__meta">
+            <span>⏱ 10 min read</span>
+            <span>📚 Intermediate</span>
+          </div>
+          <button class="btn btn--ghost btn--block" type="button" onclick="event.stopPropagation(); openStudyGuide('api');">Read Guide →</button>
+        </div>
+
+        <div class="study-card" onclick="openStudyGuide('system-design')" style="cursor:pointer">
+          <div class="study-card__icon">🏗️</div>
+          <div class="study-card__badge free">Free</div>
+          <h3>System Design Interview Guide</h3>
+          <p>Step-by-step framework to ace system design interviews. Design Twitter, Uber, Netflix, and WhatsApp from scratch with diagrams.</p>
+          <div class="study-card__meta">
+            <span>⏱ 45 min read</span>
+            <span>📚 Senior / Staff</span>
+          </div>
+          <button class="btn btn--ghost btn--block" type="button" onclick="event.stopPropagation(); openStudyGuide('system-design');">Read Guide →</button>
+        </div>
+
+        <div class="study-card" onclick="openStudyGuide('postgres')" style="cursor:pointer">
+          <div class="study-card__icon">🗄️</div>
+          <div class="study-card__badge free">Free</div>
+          <h3>PostgreSQL Deep Dive</h3>
+          <p>Query optimization, indexing strategies, EXPLAIN ANALYZE, connection pooling, partitioning, and replication — all with examples.</p>
+          <div class="study-card__meta">
+            <span>⏱ 30 min read</span>
+            <span>📚 Intermediate → Senior</span>
+          </div>
+          <button class="btn btn--ghost btn--block" type="button" onclick="event.stopPropagation(); openStudyGuide('postgres');">Read Guide →</button>
+        </div>
+
+        <div class="study-card" onclick="openStudyGuide('nodejs')" style="cursor:pointer">
+          <div class="study-card__icon">⚡</div>
+          <div class="study-card__badge free">Free</div>
+          <h3>Node.js Performance Mastery</h3>
+          <p>Event loop internals, worker threads, memory leaks, profiling tools, and production-ready Node.js patterns for high-load systems.</p>
+          <div class="study-card__meta">
+            <span>⏱ 25 min read</span>
+            <span>📚 Intermediate → Senior</span>
+          </div>
+          <button class="btn btn--ghost btn--block" type="button" onclick="event.stopPropagation(); openStudyGuide('nodejs');">Read Guide →</button>
+        </div>
+
+        <div class="study-card" onclick="openStudyGuide('k8s')" style="cursor:pointer">
+          <div class="study-card__icon">☁️</div>
+          <div class="study-card__badge free">Free</div>
+          <h3>Kubernetes for Backend Devs</h3>
+          <p>Deploying Go and Python services on K8s: pods, services, ingress, Helm charts, HPA, secrets, and production-grade observability.</p>
+          <div class="study-card__meta">
+            <span>⏱ 40 min read</span>
+            <span>📚 Intermediate → Senior</span>
+          </div>
+          <button class="btn btn--ghost btn--block" type="button" onclick="event.stopPropagation(); openStudyGuide('k8s');">Read Guide →</button>
+        </div>
+
+        <div class="study-card" onclick="openStudyGuide('qa-bank')" style="cursor:pointer">
+          <div class="study-card__icon">🤖</div>
+          <div class="study-card__badge free">Free</div>
+          <h3>Interview Q&amp;A Bank (500+ Questions)</h3>
+          <p>Backend interview questions from FAANG, startups, and fintech companies — with detailed model answers, covering all major languages.</p>
+          <div class="study-card__meta">
+            <span>⏱ Reference guide</span>
+            <span>📚 All levels</span>
+          </div>
+          <button class="btn btn--ghost btn--block" type="button" onclick="event.stopPropagation(); openStudyGuide('qa-bank');">Read Guide →</button>
+        </div>
+
+        <div class="study-card" onclick="openStudyGuide('resume')" style="cursor:pointer">
+          <div class="study-card__icon">📝</div>
+          <div class="study-card__badge free">Free</div>
+          <h3>Resume &amp; LinkedIn Guide</h3>
+          <p>Optimize your backend engineer resume and LinkedIn profile. Key skills to highlight, metric formatting, and recruiter perspective.</p>
+          <div class="study-card__meta">
+            <span>⏱ 20 min read</span>
+            <span>📚 All levels</span>
+          </div>
+          <button class="btn btn--ghost btn--block" type="button" onclick="event.stopPropagation(); openStudyGuide('resume');">Read Guide →</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NEWSLETTER ── -->
+  <section class="newsletter">
+    <div class="wrap newsletter__inner">
+      <div>
+        <h2>Get new backend jobs in your inbox</h2>
+        <p>Weekly digest of the best remote roles. Unsubscribe anytime.</p>
+      </div>
+      <form class="newsletter__form" onsubmit="handleNewsletter(event)">
+        <input type="email" placeholder="you@example.com" required />
+        <button class="btn btn--primary" type="submit">Subscribe Free</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          BackendEngineer
+        </a>
+        <p>The premier job board for remote backend &amp; fullstack engineers. Node.js, Python, Go, Java, Rust, and more.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h5>By Technology</h5>
+          <a href="#">Node.js Jobs</a>
+          <a href="#">Python Jobs</a>
+          <a href="#">Go / Golang Jobs</a>
+          <a href="#">Java Jobs</a>
+          <a href="#">Rust Jobs</a>
+          <a href="#">Ruby Jobs</a>
+        </div>
+        <div class="footer__col">
+          <h5>By Specialty</h5>
+          <a href="#">API / GraphQL</a>
+          <a href="#">Database Engineer</a>
+          <a href="#">DevOps / Cloud</a>
+          <a href="#">ML Infra</a>
+          <a href="#">Security Engineer</a>
+          <a href="#">Platform Engineer</a>
+        </div>
+        <div class="footer__col">
+          <h5>Study</h5>
+          <a href="#study">Backend Roadmap</a>
+          <a href="#study">System Design</a>
+          <a href="#study">Interview Prep</a>
+          <a href="#study">Salary Guide</a>
+        </div>
+        <div class="footer__col">
+          <h5>Company</h5>
+          <a href="#">About</a>
+          <a href="#post">Post a Job</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="wrap">
+        <p>© 2026 BackendEngineer.com · Best Remote Backend Jobs | Premium Node.js, Python &amp; Go Roles</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── MODALS ── -->
+  <div class="modal-backdrop" id="modalBackdrop" onclick="closeAllModals()"></div>
+
+  <!-- Job Detail Modal -->
+  <div class="modal" id="jobModal" style="max-width:580px;">
+    <button class="modal__close" onclick="closeJobModal()">✕</button>
+    <div id="jobModalContent"></div>
+  </div>
+
+  <!-- Study Detail Modal -->
+  <div class="modal" id="studyModal" style="max-width:740px;max-height:85vh;overflow-y:auto;">
+    <button class="modal__close" onclick="closeStudyModal()">✕</button>
+    <div id="studyModalContent" style="padding:10px 4px;"></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
