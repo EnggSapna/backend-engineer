@@ -2,34 +2,11 @@
   {
     "id": 1,
     "featured": true,
-    "title": "Freelance Copywriter",
-    "company": "Coalition Technologies ",
-    "logo": "https://remotive.com/job/1749306/logo",
-    "location": "Worldwide",
-    "salary": "$20k -$35k",
-    "tags": [
-      "accounting",
-      "excel",
-      "research",
-      "data analysis"
-    ],
-    "filter": [
-      "node",
-      "go",
-      "python",
-      "db"
-    ],
-    "age": "Recently posted",
-    "url": "https://remotive.com/remote-jobs/writing/freelance-copywriter-1749306"
-  },
-  {
-    "id": 2,
-    "featured": false,
     "title": "Senior React Full-stack Developer",
     "company": "Lemon.io",
     "logo": "https://remotive.com/job/2091101/logo",
     "location": "LATAM, Europe, USA, Canada, APAC",
-    "salary": "$145,000 – $195,000 / yr",
+    "salary": "$130,000 – $175,000 / yr",
     "tags": [
       ".Net",
       "android",
@@ -37,23 +14,26 @@
       "backend"
     ],
     "filter": [
-      "node",
+      "dotnet",
+      "qa",
       "go",
       "python",
-      "db",
-      "dotnet"
+      "node",
+      "java",
+      "rust",
+      "devops"
     ],
     "age": "Recently posted",
     "url": "https://remotive.com/remote-jobs/software-development/senior-react-full-stack-developer-2091101"
   },
   {
-    "id": 3,
-    "featured": false,
+    "id": 2,
+    "featured": true,
     "title": "Senior QA Engineer",
     "company": "Lemon.io",
     "logo": "https://remotive.com/job/2091100/logo",
     "location": "Europe",
-    "salary": "$145,000 – $195,000 / yr",
+    "salary": "$130,000 – $175,000 / yr",
     "tags": [
       ".Net",
       "android",
@@ -61,23 +41,25 @@
       "C#"
     ],
     "filter": [
-      "node",
+      "dotnet",
+      "qa",
       "go",
       "python",
-      "db",
-      "dotnet"
+      "node",
+      "java",
+      "rust"
     ],
     "age": "Recently posted",
     "url": "https://remotive.com/remote-jobs/qa/senior-qa-engineer-2091100"
   },
   {
-    "id": 4,
+    "id": 3,
     "featured": false,
     "title": "Senior DevOps Engineer",
     "company": "Lemon.io",
     "logo": "https://remotive.com/job/2091099/logo",
     "location": "LATAM, Europe, USA, Canada, APAC",
-    "salary": "$145,000 – $195,000 / yr",
+    "salary": "$130,000 – $175,000 / yr",
     "tags": [
       ".Net",
       "android",
@@ -85,46 +67,26 @@
       "azure"
     ],
     "filter": [
-      "node",
+      "dotnet",
+      "qa",
       "go",
       "python",
-      "db",
-      "dotnet"
+      "node",
+      "java",
+      "rust",
+      "devops"
     ],
     "age": "Recently posted",
     "url": "https://remotive.com/remote-jobs/devops/senior-devops-engineer-2091099"
   },
   {
-    "id": 5,
-    "featured": false,
-    "title": "Content Reviewer - English US",
-    "company": "TELUS Digital",
-    "logo": "https://remotive.com/job/2091105/logo",
-    "location": "USA",
-    "salary": "$14/hour",
-    "tags": [
-      "android",
-      "ios",
-      "social media",
-      "AI/ML"
-    ],
-    "filter": [
-      "node",
-      "go",
-      "python",
-      "db"
-    ],
-    "age": "Recently posted",
-    "url": "https://remotive.com/remote-jobs/all-others/content-reviewer-english-us-2091105"
-  },
-  {
-    "id": 6,
+    "id": 4,
     "featured": false,
     "title": "Senior Golang Developer",
     "company": "Lemon.io",
     "logo": "https://remotive.com/job/2091098/logo",
     "location": "Europe, USA, UK, Canada, Australia, Singapore",
-    "salary": "$145,000 – $195,000 / yr",
+    "salary": "$130,000 – $175,000 / yr",
     "tags": [
       ".Net",
       "android",
@@ -132,13 +94,85 @@
       "C#"
     ],
     "filter": [
-      "node",
+      "dotnet",
+      "qa",
       "go",
       "python",
-      "db",
-      "dotnet"
+      "node",
+      "java",
+      "rust",
+      "devops"
     ],
     "age": "Recently posted",
     "url": "https://remotive.com/remote-jobs/software-development/senior-golang-developer-2091098"
+  },
+  {
+    "id": 5,
+    "featured": false,
+    "title": "Senior Data Engineer",
+    "company": "Lemon.io",
+    "logo": "https://remotive.com/job/2091097/logo",
+    "location": "LATAM, Europe, USA, Canada, APAC",
+    "salary": "$130,000 – $175,000 / yr",
+    "tags": [
+      ".Net",
+      "android",
+      "apache",
+      "AWS"
+    ],
+    "filter": [
+      "dotnet",
+      "qa",
+      "go",
+      "python",
+      "node",
+      "java",
+      "rust",
+      "devops"
+    ],
+    "age": "Recently posted",
+    "url": "https://remotive.com/remote-jobs/software-development/senior-data-engineer-2091097"
+  },
+  {
+    "id": 6,
+    "featured": false,
+    "title": "Senior Independent AI Engineer / Architect",
+    "company": "A.Team",
+    "logo": "https://remotive.com/job/1919266/logo",
+    "location": "Americas, Europe, Israel",
+    "salary": "$120 - $170 /hour",
+    "tags": [
+      "go",
+      "UI/UX",
+      "wordpress",
+      "chat"
+    ],
+    "filter": [
+      "qa",
+      "go"
+    ],
+    "age": "Recently posted",
+    "url": "https://remotive.com/remote-jobs/software-development/senior-independent-ai-engineer-architect-1919266"
+  },
+  {
+    "id": 7,
+    "featured": false,
+    "title": "Senior Independent Software Developer",
+    "company": "A.Team",
+    "logo": "https://remotive.com/job/1919265/logo",
+    "location": "Americas, Europe, Israel",
+    "salary": "$90 - $150 /hour",
+    "tags": [
+      "go",
+      "wordpress",
+      "chat",
+      "apple"
+    ],
+    "filter": [
+      "qa",
+      "go"
+    ],
+    "age": "Recently posted",
+    "url": "https://remotive.com/remote-jobs/software-development/senior-independent-software-developer-1919265"
   }
 ]
