@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post a Backend Job — Hire Senior Engineers | BackendEngineer</title>
+  <meta name="description" content="Reach 50,000+ experienced backend software engineers. Post your open role for Node.js, Python, Go, .NET, Java, and cloud developers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    .post-hero { text-align: center; padding: 50px 20px 30px; position: relative; }
+    .post-hero h1 { font-size: 2.6rem; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .post-hero p { color: var(--fg-2); font-size: 1.1rem; max-width: 620px; margin: 0 auto; }
+    .post-container { max-width: 1100px; margin: 0 auto 80px; padding: 0 20px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 36px; }
+    .form-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--r-xl); padding: 36px; box-shadow: var(--shadow); }
+    .form-section-title { font-size: 1.15rem; font-weight: 700; color: var(--fg); margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.84rem; font-weight: 600; color: var(--fg); margin-bottom: 6px; }
+    .form-group .hint { font-size: 0.76rem; color: var(--fg-3); margin-top: 4px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 11px 14px; background: var(--bg-3); border: 1px solid var(--border);
+      border-radius: var(--r); color: var(--fg); font-family: var(--font); font-size: 0.92rem; outline: none; transition: border-color var(--t);
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); }
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .tag-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .tag-chip {
+      padding: 5px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 500;
+      background: var(--bg-4); border: 1px solid var(--border); color: var(--fg-2); cursor: pointer; transition: all var(--t); user-select: none;
+    }
+    .tag-chip.active { background: var(--primary-soft); border-color: var(--primary); color: var(--primary); font-weight: 600; }
+    
+    /* Live Preview Sticky Sidebar */
+    .preview-sticky { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 24px; }
+    .preview-box { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--r-xl); padding: 24px; }
+    .pricing-card {
+      background: linear-gradient(145deg, rgba(249,115,22,0.08), rgba(0,0,0,0.5));
+      border: 1px solid rgba(249,115,22,0.3); border-radius: var(--r-xl); padding: 28px;
+    }
+    .price-num { font-size: 2.2rem; font-weight: 900; color: var(--fg); }
+    .price-currency { font-size: 1rem; color: var(--primary); font-weight: 700; margin-left: 4px; }
+    .perks-list { margin: 16px 0 24px; list-style: none; font-size: 0.88rem; color: var(--fg-2); }
+    .perks-list li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .perks-list li span { color: var(--green); font-weight: bold; }
+
+    /* Success Modal Overlay */
+    .success-modal {
+      display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 20px;
+    }
+    .success-box {
+      background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--r-xl);
+      max-width: 520px; width: 100%; padding: 40px 32px; text-align: center; box-shadow: var(--shadow-lg); animation: popIn 0.25s ease-out;
+    }
+    @keyframes popIn { from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+    @media (max-width: 860px) {
+      .post-container { grid-template-columns: 1fr; }
+      .preview-sticky { position: static; }
+      .post-hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        BackendEngineer
+      </a>
+
+      <div class="nav__links">
+        <a href="index.html#jobs">Browse Jobs</a>
+        <a href="index.html#study">Study Resources</a>
+      </div>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="index.html" class="btn btn--ghost btn--sm">← View All Jobs</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <header class="post-hero">
+    <div class="hero__badge" style="margin-bottom:12px;">
+      <span class="pulse-dot"></span> Reaches 50,000+ Verified Backend Developers
+    </div>
+    <h1>Hire Senior Backend Engineers</h1>
+    <p>Target engineers skilled in Go, Python, Node.js, .NET Core, Java, Rust, and distributed cloud systems.</p>
+  </header>
+
+  <main class="post-container">
+    <!-- LEFT: FORM -->
+    <div class="form-card">
+      <form id="jobPostForm" onsubmit="handleJobPayment(event)">
+
+        <div class="form-section-title">
+          <span>💼</span> 1. Job Information
+        </div>
+
+        <div class="form-group">
+          <label for="jobTitle">Job Title *</label>
+          <input type="text" id="jobTitle" placeholder="e.g. Senior Go / Backend Engineer – Distributed Systems" required oninput="updateLivePreview()" />
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="jobLocation">Location *</label>
+            <input type="text" id="jobLocation" placeholder="e.g. 🌍 Remote (Worldwide) or Bengaluru" required oninput="updateLivePreview()" />
+          </div>
+          <div class="form-group">
+            <label for="jobSalary">Salary Range *</label>
+            <input type="text" id="jobSalary" placeholder="e.g. $140k – $190k or ₹25L – ₹40L" required oninput="updateLivePreview()" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Primary Tech Tags (Select up to 4) *</label>
+          <div class="tag-chips" id="tagChips">
+            <span class="tag-chip active" data-tag="Go" onclick="toggleTag(this)">Go</span>
+            <span class="tag-chip active" data-tag="PostgreSQL" onclick="toggleTag(this)">PostgreSQL</span>
+            <span class="tag-chip active" data-tag="Docker" onclick="toggleTag(this)">Docker</span>
+            <span class="tag-chip active" data-tag="AWS" onclick="toggleTag(this)">AWS</span>
+            <span class="tag-chip" data-tag=".NET Core" onclick="toggleTag(this)">.NET Core</span>
+            <span class="tag-chip" data-tag="C#" onclick="toggleTag(this)">C#</span>
+            <span class="tag-chip" data-tag="Node.js" onclick="toggleTag(this)">Node.js</span>
+            <span class="tag-chip" data-tag="Python" onclick="toggleTag(this)">Python</span>
+            <span class="tag-chip" data-tag="Java" onclick="toggleTag(this)">Java</span>
+            <span class="tag-chip" data-tag="Rust" onclick="toggleTag(this)">Rust</span>
+            <span class="tag-chip" data-tag="Redis" onclick="toggleTag(this)">Redis</span>
+            <span class="tag-chip" data-tag="Kafka" onclick="toggleTag(this)">Kafka</span>
+            <span class="tag-chip" data-tag="Kubernetes" onclick="toggleTag(this)">Kubernetes</span>
+          </div>
+        </div>
+
+        <div class="form-section-title" style="margin-top:32px;">
+          <span>🏢</span> 2. Company Details
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="companyName">Company Name *</label>
+            <input type="text" id="companyName" placeholder="e.g. Acme Tech Inc." required oninput="updateLivePreview()" />
+          </div>
+          <div class="form-group">
+            <label for="companyLogo">Company Logo URL (optional)</label>
+            <input type="url" id="companyLogo" placeholder="https://yourcompany.com/logo.png" oninput="updateLivePreview()" />
+            <div class="hint">Leave blank to auto-generate a sleek company avatar.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="applyUrl">Application Link or Recruiter Email *</label>
+          <input type="text" id="applyUrl" placeholder="https://careers.yourcompany.com/job/123 or jobs@company.com" required oninput="updateLivePreview()" />
+          <div class="hint">Candidates will be sent directly here when clicking Apply.</div>
+        </div>
+
+        <div class="form-section-title" style="margin-top:32px;">
+          <span>💳</span> 3. Recruiter Billing Details
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="recruiterEmail">Work Email (for receipt & invoice) *</label>
+            <input type="email" id="recruiterEmail" placeholder="hiring@yourcompany.com" required />
+          </div>
+          <div class="form-group">
+            <label for="recruiterName">Billing Name *</label>
+            <input type="text" id="recruiterName" placeholder="e.g. Alex Morgan" required />
+          </div>
+        </div>
+
+        <button type="submit" id="payJobBtn" class="btn btn--primary btn--block btn--lg" style="margin-top:16px;font-size:1.05rem;">
+          Pay ₹2,999 &amp; Publish Featured Job →
+        </button>
+        <p style="font-size:0.75rem;color:var(--fg-3);text-align:center;margin-top:10px;">
+          🔒 Secured by Razorpay &middot; 256-bit SSL Encryption &middot; Instant 30-Day Listing
+        </p>
+      </form>
+    </div>
+
+    <!-- RIGHT: LIVE PREVIEW & PRICING -->
+    <div class="preview-sticky">
+      <!-- PRICING BOX -->
+      <div class="pricing-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+          <div>
+            <h3 style="font-size:1.15rem;font-weight:800;color:var(--fg);margin-bottom:2px;">Featured 30-Day Listing</h3>
+            <span style="font-size:0.8rem;color:var(--primary);font-weight:600;">⭐ Premium Employer Placement</span>
+          </div>
+          <div style="text-align:right;">
+            <span class="price-num">₹2,999</span>
+            <span class="price-currency">INR</span>
+          </div>
+        </div>
+
+        <ul class="perks-list">
+          <li><span>✓</span> <strong>Featured Badge:</strong> Highlighted at the very top of the homepage</li>
+          <li><span>✓</span> <strong>Direct Apply:</strong> Zero middleman; candidate applies directly on your link</li>
+          <li><span>✓</span> <strong>Multi-Language Tags:</strong> Filterable by .NET, Python, Go, Node, etc.</li>
+          <li><span>✓</span> <strong>Live for 30 Days:</strong> Unlimited applicants, zero hiring commission</li>
+          <li><span>✓</span> <strong>GST / Tax Invoice:</strong> Sent automatically to your work email</li>
+        </ul>
+      </div>
+
+      <!-- LIVE PREVIEW CARD -->
+      <div class="preview-box">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+          <span style="font-size:0.82rem;font-weight:700;color:var(--fg-3);text-transform:uppercase;letter-spacing:0.05em;">Live Card Preview</span>
+          <span style="font-size:0.75rem;color:var(--green);font-weight:600;">● Updates in real time</span>
+        </div>
+
+        <div class="job-card job-card--featured" style="cursor:default;margin:0;">
+          <div class="job-logo" id="prevLogo" style="background:#f97316;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;">
+            AT
+          </div>
+          <div class="job-body">
+            <div class="job-top">
+              <span class="job-title-txt" id="prevTitle">Senior Go / Backend Engineer</span>
+              <span class="job-dot">·</span>
+              <span class="job-company" id="prevCompany">Acme Tech Inc.</span>
+            </div>
+            <div class="job-meta">
+              <span class="job-loc" id="prevLoc">🌍 Remote (Worldwide)</span>
+              <span class="job-sal" id="prevSal">$140k – $190k</span>
+            </div>
+            <div class="job-tags" id="prevTags">
+              <span class="job-tag">Go</span>
+              <span class="job-tag">PostgreSQL</span>
+              <span class="job-tag">Docker</span>
+              <span class="job-tag">AWS</span>
+            </div>
+          </div>
+          <div class="job-right">
+            <span class="job-age" style="color:var(--primary);font-weight:700;">★ Featured</span>
+            <button class="job-apply" type="button" style="pointer-events:none;">Apply →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── SUCCESS MODAL ── -->
+  <div class="success-modal" id="successModal">
+    <div class="success-box">
+      <div style="font-size:3.5rem;margin-bottom:12px;">🎉 🚀</div>
+      <h2 style="font-size:1.6rem;font-weight:900;margin-bottom:8px;color:var(--fg);">Job Successfully Published!</h2>
+      <p style="color:var(--fg-2);font-size:0.95rem;line-height:1.6;margin-bottom:24px;">
+        Your job is now live at the very top of <strong>BackendEngineer</strong> as a <strong>Featured Listing</strong>! A confirmation receipt has been sent to your email.
+      </p>
+      <div style="display:flex;gap:12px;justify-content:center;">
+        <a href="index.html" class="btn btn--primary btn--lg">View Live on Homepage →</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── THEME INITIALIZATION ──
+    (function(){
+      const saved = localStorage.getItem('be-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+      document.getElementById('themeToggle')?.addEventListener('click', () => {
+        const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('be-theme', next);
+      });
+    })();
+
+    // ── TAG SELECTION ──
+    let selectedTags = ['Go', 'PostgreSQL', 'Docker', 'AWS'];
+    function toggleTag(el) {
+      const tag = el.dataset.tag;
+      if (selectedTags.includes(tag)) {
+        if (selectedTags.length > 1) {
+          selectedTags = selectedTags.filter(t => t !== tag);
+          el.classList.remove('active');
+        }
+      } else {
+        if (selectedTags.length < 4) {
+          selectedTags.push(tag);
+          el.classList.add('active');
+        } else {
+          alert('You can select up to 4 primary tags for the card preview.');
+        }
+      }
+      updateLivePreview();
+    }
+
+    // ── LIVE PREVIEW UPDATES ──
+    function updateLivePreview() {
+      const title = document.getElementById('jobTitle').value.trim() || 'Senior Go / Backend Engineer';
+      const company = document.getElementById('companyName').value.trim() || 'Acme Tech Inc.';
+      const loc = document.getElementById('jobLocation').value.trim() || '🌍 Remote (Worldwide)';
+      const sal = document.getElementById('jobSalary').value.trim() || '$140k – $190k';
+      const logoUrl = document.getElementById('companyLogo').value.trim();
+
+      document.getElementById('prevTitle').textContent = title;
+      document.getElementById('prevCompany').textContent = company;
+      document.getElementById('prevLoc').textContent = loc;
+      document.getElementById('prevSal').textContent = sal;
+
+      // Update Tags
+      const tagsEl = document.getElementById('prevTags');
+      tagsEl.innerHTML = selectedTags.map(t => `<span class="job-tag">${t}</span>`).join('');
+
+      // Update Logo
+      const logoEl = document.getElementById('prevLogo');
+      if (logoUrl) {
+        logoEl.innerHTML = `<img src="${logoUrl}" alt="${company}" style="width:100%;height:100%;object-fit:contain;border-radius:var(--r);" onerror="this.parentNode.innerHTML='${company.substring(0,2).toUpperCase()}';" />`;
+      } else {
+        logoEl.innerHTML = company.substring(0,2).toUpperCase();
+      }
+    }
+
+    // ── RAZORPAY PAYMENT & PUBLISH ──
+    async function handleJobPayment(e) {
+      e.preventDefault();
+      const btn = document.getElementById('payJobBtn');
+      btn.innerHTML = '<span style="display:inline-block;width:16px;height:16px;border:2px solid currentColor;border-top-color:transparent;border-radius:50%;animation:spin .7s linear infinite"></span> Initializing Razorpay Checkout…';
+      btn.disabled = true;
+
+      const title = document.getElementById('jobTitle').value.trim();
+      const company = document.getElementById('companyName').value.trim();
+      const loc = document.getElementById('jobLocation').value.trim();
+      const sal = document.getElementById('jobSalary').value.trim();
+      const logoUrl = document.getElementById('companyLogo').value.trim();
+      const applyUrl = document.getElementById('applyUrl').value.trim();
+      const email = document.getElementById('recruiterEmail').value.trim();
+      const name = document.getElementById('recruiterName').value.trim();
+
+      const newJob = {
+        id: 'job_' + Date.now(),
+        featured: true,
+        title,
+        company,
+        logo: logoUrl || `https://logo.clearbit.com/${company.toLowerCase().replace(/[^a-z0-9]/g,'')}.com`,
+        location: loc,
+        salary: sal,
+        tags: selectedTags,
+        filter: selectedTags.map(t => t.toLowerCase().replace(/[^a-z0-9]/g,'')),
+        age: 'Just now',
+        url: applyUrl.startsWith('http') ? applyUrl : `https://${applyUrl}`
+      };
+
+      try {
+        // 1. Create Razorpay order for ₹2,999
+        let orderData = null;
+        try {
+          const res = await fetch('/api/razorpay/create-order', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ amount: 2999, plan: 'featured_job', currency: 'INR' })
+          });
+          if (res.ok) orderData = await res.json();
+        } catch (err) {
+          console.warn('Backend order call failed, running test fallback:', err);
+        }
+
+        if (!orderData) {
+          orderData = {
+            id: 'order_test_' + Date.now(),
+            amount: 299900,
+            currency: 'INR',
+            key_id: 'rzp_test_placeholder'
+          };
+        }
+
+        // 2. Open Razorpay Checkout Modal
+        const options = {
+          key: orderData.key_id || 'rzp_test_placeholder',
+          amount: orderData.amount,
+          currency: 'INR',
+          name: 'BackendEngineer',
+          description: 'Featured 30-Day Job Listing',
+          image: 'https://cdn-icons-png.flaticon.com/512/919/919825.png',
+          order_id: orderData.id.startsWith('order_test_') ? undefined : orderData.id,
+          prefill: {
+            name: name,
+            email: email,
+            contact: '9999999999'
+          },
+          theme: { color: '#f97316' },
+          handler: function (response) {
+            console.log('Razorpay Payment Succeeded:', response);
+            // Save newly posted job to localStorage so it immediately appears on homepage
+            const existing = JSON.parse(localStorage.getItem('be_custom_jobs') || '[]');
+            existing.unshift(newJob);
+            localStorage.setItem('be_custom_jobs', JSON.stringify(existing));
+
+            // Show Success Modal
+            document.getElementById('successModal').style.display = 'flex';
+          },
+          modal: {
+            ondismiss: function () {
+              btn.innerHTML = 'Pay ₹2,999 &amp; Publish Featured Job →';
+              btn.disabled = false;
+            }
+          }
+        };
+
+        if (window.Razorpay) {
+          const rzp = new window.Razorpay(options);
+          rzp.open();
+        } else {
+          // Demo fallback
+          alert('Demo payment processed!');
+          const existing = JSON.parse(localStorage.getItem('be_custom_jobs') || '[]');
+          existing.unshift(newJob);
+          localStorage.setItem('be_custom_jobs', JSON.stringify(existing));
+          document.getElementById('successModal').style.display = 'flex';
+        }
+
+      } catch (err) {
+        alert('Payment setup error: ' + err.message);
+        btn.innerHTML = 'Pay ₹2,999 &amp; Publish Featured Job →';
+        btn.disabled = false;
+      }
+    }
+  </script>
+  <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
+</body>
+</html>

@@ -30,8 +30,8 @@ async function fetchScrapedJobs() {
     if (res.ok) {
       const data = await res.json();
       if (Array.isArray(data) && data.length > 0) {
-        // Merge API jobs into current list so every language is represented
-        JOBS = data;
+        const customJobs = JSON.parse(localStorage.getItem('be_custom_jobs') || '[]');
+        JOBS = [...customJobs, ...data];
         renderJobs();
       }
     }
@@ -1116,6 +1116,13 @@ document.addEventListener('DOMContentLoaded', () => {
       t.scrollIntoView({behavior:'smooth',block:'start'});
     });
   });
+
+  try {
+    const customJobs = JSON.parse(localStorage.getItem('be_custom_jobs') || '[]');
+    if (Array.isArray(customJobs) && customJobs.length > 0) {
+      JOBS = [...customJobs, ...JOBS];
+    }
+  } catch (e) {}
 
   renderJobs();
   fetchScrapedJobs();
